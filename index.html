@@ -31,12 +31,11 @@
         <script src="js/leaflet-hash.js"></script>
         <script src="js/Autolinker.min.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
-        <script src="data/AgeGroup20600.js"></script>
-        <script src="data/gyms1.js"></script>
-        <script src="data/parksSG2.js"></script>
-        <script src="data/subways3.js"></script>
-        <script src="data/HDBBranches4.js"></script>
-        <script src="data/HDBBranchesgyms5.js"></script>
+        <script src="data/AgeGroup25540.js"></script>
+        <script src="data/subways1.js"></script>
+        <script src="data/HDBBranchesgyms2.js"></script>
+        <script src="data/HDBBranches3.js"></script>
+        <script src="data/gyms4.js"></script>
         <script>
         L.ImageOverlay.include({
             getBounds: function () {
@@ -75,11 +74,11 @@
             ];
           });
         }
-        function pop_AgeGroup20600(feature, layer) {
+        function pop_AgeGroup25540(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">SUBZONE_N</th>\
-                        <td>' + (feature.properties['SUBZONE_N'] !== null ? Autolinker.link(String(feature.properties['SUBZONE_N'])) : '') + '</td>\
+                        <th scope="row">SUBZONE_C</th>\
+                        <td>' + (feature.properties['SUBZONE_C'] !== null ? Autolinker.link(String(feature.properties['SUBZONE_C'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">X_ADDR</th>\
@@ -90,17 +89,36 @@
                         <td>' + (feature.properties['Y_ADDR'] !== null ? Autolinker.link(String(feature.properties['Y_ADDR'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Age20-60</th>\
-                        <td>' + (feature.properties['Age20-60'] !== null ? Autolinker.link(String(feature.properties['Age20-60'])) : '') + '</td>\
+                        <th scope="row">SHAPE_Leng</th>\
+                        <td>' + (feature.properties['SHAPE_Leng'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Leng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">SHAPE_Area</th>\
+                        <td>' + (feature.properties['SHAPE_Area'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Area'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">AgeGroup2015_Age25-54</th>\
+                        <td>' + (feature.properties['AgeGroup2015_Age25-54'] !== null ? Autolinker.link(String(feature.properties['AgeGroup2015_Age25-54'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent);
         }
 
-        function style_AgeGroup20600(feature) {
-            if (feature.properties['Age20-60'] >= 90.000000 && feature.properties['Age20-60'] <= 5130.000000 ) {
+        function style_AgeGroup25540(feature) {
+            if (feature.properties['AgeGroup2015_Age25-54'] >= 0.000000 && feature.properties['AgeGroup2015_Age25-54'] <= 0.000000 ) {
                 return {
-                pane: 'pane_AgeGroup20600',
+                pane: 'pane_AgeGroup25540',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+            }
+            }
+            if (feature.properties['AgeGroup2015_Age25-54'] >= 0.000000 && feature.properties['AgeGroup2015_Age25-54'] <= 3500.000000 ) {
+                return {
+                pane: 'pane_AgeGroup25540',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -111,9 +129,9 @@
                 fillColor: 'rgba(247,251,255,1.0)',
             }
             }
-            if (feature.properties['Age20-60'] >= 5130.000000 && feature.properties['Age20-60'] <= 13720.000000 ) {
+            if (feature.properties['AgeGroup2015_Age25-54'] >= 3500.000000 && feature.properties['AgeGroup2015_Age25-54'] <= 10080.000000 ) {
                 return {
-                pane: 'pane_AgeGroup20600',
+                pane: 'pane_AgeGroup25540',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -124,9 +142,9 @@
                 fillColor: 'rgba(200,221,240,1.0)',
             }
             }
-            if (feature.properties['Age20-60'] >= 13720.000000 && feature.properties['Age20-60'] <= 27490.000000 ) {
+            if (feature.properties['AgeGroup2015_Age25-54'] >= 10080.000000 && feature.properties['AgeGroup2015_Age25-54'] <= 20450.000000 ) {
                 return {
-                pane: 'pane_AgeGroup20600',
+                pane: 'pane_AgeGroup25540',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -137,9 +155,9 @@
                 fillColor: 'rgba(115,179,216,1.0)',
             }
             }
-            if (feature.properties['Age20-60'] >= 27490.000000 && feature.properties['Age20-60'] <= 50400.000000 ) {
+            if (feature.properties['AgeGroup2015_Age25-54'] >= 20450.000000 && feature.properties['AgeGroup2015_Age25-54'] <= 37780.000000 ) {
                 return {
-                pane: 'pane_AgeGroup20600',
+                pane: 'pane_AgeGroup25540',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -150,9 +168,9 @@
                 fillColor: 'rgba(40,121,185,1.0)',
             }
             }
-            if (feature.properties['Age20-60'] >= 50400.000000 && feature.properties['Age20-60'] <= 85870.000000 ) {
+            if (feature.properties['AgeGroup2015_Age25-54'] >= 37780.000000 && feature.properties['AgeGroup2015_Age25-54'] <= 62060.000000 ) {
                 return {
-                pane: 'pane_AgeGroup20600',
+                pane: 'pane_AgeGroup25540',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -164,127 +182,16 @@
             }
             }
         }
-        map.createPane('pane_AgeGroup20600');
-        map.getPane('pane_AgeGroup20600').style.zIndex = 600;
-        map.getPane('pane_AgeGroup20600').style['mix-blend-mode'] = 'normal';
-    var layer_AgeGroup20600 = new L.geoJson(json_AgeGroup20600, {
-        pane: 'pane_AgeGroup20600',
-        onEachFeature: pop_AgeGroup20600,
-        style: style_AgeGroup20600
+        map.createPane('pane_AgeGroup25540');
+        map.getPane('pane_AgeGroup25540').style.zIndex = 600;
+        map.getPane('pane_AgeGroup25540').style['mix-blend-mode'] = 'normal';
+    var layer_AgeGroup25540 = new L.geoJson(json_AgeGroup25540, {
+        pane: 'pane_AgeGroup25540',
+        onEachFeature: pop_AgeGroup25540,
+        style: style_AgeGroup25540
     });
-        bounds_group.addLayer(layer_AgeGroup20600);
-        feature_group.addLayer(layer_AgeGroup20600);
-        function pop_gyms1(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">ADDRESSPOS</th>\
-                        <td>' + (feature.properties['ADDRESSPOS'] !== null ? Autolinker.link(String(feature.properties['ADDRESSPOS'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ADDRESSSTR</th>\
-                        <td>' + (feature.properties['ADDRESSSTR'] !== null ? Autolinker.link(String(feature.properties['ADDRESSSTR'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DESCRIPTIO</th>\
-                        <td>' + (feature.properties['DESCRIPTIO'] !== null ? Autolinker.link(String(feature.properties['DESCRIPTIO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">NAME</th>\
-                        <td>' + (feature.properties['NAME'] !== null ? Autolinker.link(String(feature.properties['NAME'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">X_ADDR</th>\
-                        <td>' + (feature.properties['X_ADDR'] !== null ? Autolinker.link(String(feature.properties['X_ADDR'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Y_ADDR</th>\
-                        <td>' + (feature.properties['Y_ADDR'] !== null ? Autolinker.link(String(feature.properties['Y_ADDR'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent);
-        }
-
-        function style_gyms1() {
-            return {
-                pane: 'pane_gyms1',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/sport_gym.svg',
-            iconSize: [21.28, 21.28]
-        }),
-            }
-        }
-        map.createPane('pane_gyms1');
-        map.getPane('pane_gyms1').style.zIndex = 601;
-        map.getPane('pane_gyms1').style['mix-blend-mode'] = 'normal';
-        var layer_gyms1 = new L.geoJson(json_gyms1, {
-            pane: 'pane_gyms1',
-            onEachFeature: pop_gyms1,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.marker(latlng, style_gyms1(feature))
-            }
-        });
-        bounds_group.addLayer(layer_gyms1);
-        feature_group.addLayer(layer_gyms1);
-        function pop_parksSG2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">NAME</th>\
-                        <td>' + (feature.properties['NAME'] !== null ? Autolinker.link(String(feature.properties['NAME'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DESCRIPTIO</th>\
-                        <td>' + (feature.properties['DESCRIPTIO'] !== null ? Autolinker.link(String(feature.properties['DESCRIPTIO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ADDRESSSTR</th>\
-                        <td>' + (feature.properties['ADDRESSSTR'] !== null ? Autolinker.link(String(feature.properties['ADDRESSSTR'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">X_ADDR</th>\
-                        <td>' + (feature.properties['X_ADDR'] !== null ? Autolinker.link(String(feature.properties['X_ADDR'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Y_ADDR</th>\
-                        <td>' + (feature.properties['Y_ADDR'] !== null ? Autolinker.link(String(feature.properties['Y_ADDR'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent);
-        }
-
-        function style_parksSG2() {
-            return {
-                pane: 'pane_parksSG2',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'legend/parksSG2.png',
-            iconSize: [20.52, 20.52]
-        }),
-            }
-        }
-        map.createPane('pane_parksSG2');
-        map.getPane('pane_parksSG2').style.zIndex = 602;
-        map.getPane('pane_parksSG2').style['mix-blend-mode'] = 'normal';
-        var layer_parksSG2 = new L.geoJson(json_parksSG2, {
-            pane: 'pane_parksSG2',
-            onEachFeature: pop_parksSG2,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.marker(latlng, style_parksSG2(feature))
-            }
-        });
-        bounds_group.addLayer(layer_parksSG2);
-        feature_group.addLayer(layer_parksSG2);
-        function pop_subways3(feature, layer) {
+        bounds_group.addLayer(layer_AgeGroup25540);
+        function pop_subways1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">osm_id</th>\
@@ -302,22 +209,11 @@
             layer.bindPopup(popupContent);
         }
 
-        function style_subways3(feature) {
+        function style_subways1(feature) {
             switch(feature.properties['name']) {
-                case '':
-                    return {
-                pane: 'pane_subways3',
-                opacity: 1,
-                color: 'rgba(223,164,122,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 7.0,
-            }
-                    break;
                 case 'Circle Line Extension':
                     return {
-                pane: 'pane_subways3',
+                pane: 'pane_subways1',
                 opacity: 1,
                 color: 'rgba(247,250,36,1.0)',
                 dashArray: '',
@@ -328,7 +224,7 @@
                     break;
                 case 'Circle Line MRT':
                     return {
-                pane: 'pane_subways3',
+                pane: 'pane_subways1',
                 opacity: 1,
                 color: 'rgba(247,250,36,1.0)',
                 dashArray: '',
@@ -339,7 +235,7 @@
                     break;
                 case 'Downtown Line MRT':
                     return {
-                pane: 'pane_subways3',
+                pane: 'pane_subways1',
                 opacity: 1,
                 color: 'rgba(48,146,210,1.0)',
                 dashArray: '',
@@ -350,7 +246,7 @@
                     break;
                 case 'MRT East West Line (EW)':
                     return {
-                pane: 'pane_subways3',
+                pane: 'pane_subways1',
                 opacity: 1,
                 color: 'rgba(41,233,27,1.0)',
                 dashArray: '',
@@ -361,7 +257,7 @@
                     break;
                 case 'MRT East West Line (EW) Changi Airport Line':
                     return {
-                pane: 'pane_subways3',
+                pane: 'pane_subways1',
                 opacity: 1,
                 color: 'rgba(45,255,30,1.0)',
                 dashArray: '',
@@ -372,7 +268,7 @@
                     break;
                 case 'North East Line (NE)':
                     return {
-                pane: 'pane_subways3',
+                pane: 'pane_subways1',
                 opacity: 1,
                 color: 'rgba(236,13,17,1.0)',
                 dashArray: '',
@@ -383,7 +279,7 @@
                     break;
                 case 'North South Line (NS)':
                     return {
-                pane: 'pane_subways3',
+                pane: 'pane_subways1',
                 opacity: 1,
                 color: 'rgba(145,38,220,1.0)',
                 dashArray: '',
@@ -394,86 +290,16 @@
                     break;
             }
         }
-        map.createPane('pane_subways3');
-        map.getPane('pane_subways3').style.zIndex = 603;
-        map.getPane('pane_subways3').style['mix-blend-mode'] = 'normal';
-    var layer_subways3 = new L.geoJson(json_subways3, {
-        pane: 'pane_subways3',
-        onEachFeature: pop_subways3,
-        style: style_subways3
+        map.createPane('pane_subways1');
+        map.getPane('pane_subways1').style.zIndex = 601;
+        map.getPane('pane_subways1').style['mix-blend-mode'] = 'normal';
+    var layer_subways1 = new L.geoJson(json_subways1, {
+        pane: 'pane_subways1',
+        onEachFeature: pop_subways1,
+        style: style_subways1
     });
-        bounds_group.addLayer(layer_subways3);
-        feature_group.addLayer(layer_subways3);
-        function pop_HDBBranches4(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">POSTAL_COD</th>\
-                        <td>' + (feature.properties['POSTAL_COD'] !== null ? Autolinker.link(String(feature.properties['POSTAL_COD'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">UNIT_NO</th>\
-                        <td>' + (feature.properties['UNIT_NO'] !== null ? Autolinker.link(String(feature.properties['UNIT_NO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">LEVEL_NO</th>\
-                        <td>' + (feature.properties['LEVEL_NO'] !== null ? Autolinker.link(String(feature.properties['LEVEL_NO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">STREET_NAM</th>\
-                        <td>' + (feature.properties['STREET_NAM'] !== null ? Autolinker.link(String(feature.properties['STREET_NAM'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">BLOCK_NO</th>\
-                        <td>' + (feature.properties['BLOCK_NO'] !== null ? Autolinker.link(String(feature.properties['BLOCK_NO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">BRANCH</th>\
-                        <td>' + (feature.properties['BRANCH'] !== null ? Autolinker.link(String(feature.properties['BRANCH'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DESCRIPTIO</th>\
-                        <td>' + (feature.properties['DESCRIPTIO'] !== null ? Autolinker.link(String(feature.properties['DESCRIPTIO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">X_ADDR</th>\
-                        <td>' + (feature.properties['X_ADDR'] !== null ? Autolinker.link(String(feature.properties['X_ADDR'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Y_ADDR</th>\
-                        <td>' + (feature.properties['Y_ADDR'] !== null ? Autolinker.link(String(feature.properties['Y_ADDR'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent);
-        }
-
-        function style_HDBBranches4() {
-            return {
-                pane: 'pane_HDBBranches4',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'legend/HDBBranches4.png',
-            iconSize: [20.52, 20.52]
-        }),
-            }
-        }
-        map.createPane('pane_HDBBranches4');
-        map.getPane('pane_HDBBranches4').style.zIndex = 604;
-        map.getPane('pane_HDBBranches4').style['mix-blend-mode'] = 'normal';
-        var layer_HDBBranches4 = new L.geoJson(json_HDBBranches4, {
-            pane: 'pane_HDBBranches4',
-            onEachFeature: pop_HDBBranches4,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.marker(latlng, style_HDBBranches4(feature))
-            }
-        });
-        bounds_group.addLayer(layer_HDBBranches4);
-        feature_group.addLayer(layer_HDBBranches4);
-        function pop_HDBBranchesgyms5(feature, layer) {
+        bounds_group.addLayer(layer_subways1);
+        function pop_HDBBranchesgyms2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">POSTAL_COD</th>\
@@ -519,45 +345,264 @@
             layer.bindPopup(popupContent);
         }
 
-        function style_HDBBranchesgyms5() {
-            return {
-                pane: 'pane_HDBBranchesgyms5',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'legend/HDBBranchesgyms5.png',
-            iconSize: [20.52, 20.52]
-        }),
+        function style_HDBBranchesgyms2(feature) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            // Start of if blocks and style check logic
+            if (HDBBranchesgyms2rule0_eval_expression(context)) {
+              return {
+                pane: 'pane_HDBBranchesgyms2',
+                radius: 2.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,0.8)',
+            };
+            }
+            else if (HDBBranchesgyms2rule1_eval_expression(context)) {
+              return {
+                pane: 'pane_HDBBranchesgyms2',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,0.8)',
+            };
+            }
+            else if (HDBBranchesgyms2rule2_eval_expression(context)) {
+              return {
+                pane: 'pane_HDBBranchesgyms2',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,0.8)',
+            };
+            }
+            else if (HDBBranchesgyms2rule3_eval_expression(context)) {
+              return {
+                pane: 'pane_HDBBranchesgyms2',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,0.8)',
+            };
+            }
+            else if (HDBBranchesgyms2rule4_eval_expression(context)) {
+              return {
+                pane: 'pane_HDBBranchesgyms2',
+                radius: 10.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,0.8)',
+            };
+            }
+            else if (HDBBranchesgyms2rule5_eval_expression(context)) {
+              return {
+                pane: 'pane_HDBBranchesgyms2',
+                radius: 18.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,0.8)',
+            };
+            }
+            else if (HDBBranchesgyms2rule6_eval_expression(context)) {
+              return {
+                pane: 'pane_HDBBranchesgyms2',
+                radius: 24.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.8)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,0.8)',
+            };
+            }
+            else {
+                return {fill: false, stroke: false};
             }
         }
-        map.createPane('pane_HDBBranchesgyms5');
-        map.getPane('pane_HDBBranchesgyms5').style.zIndex = 605;
-        map.getPane('pane_HDBBranchesgyms5').style['mix-blend-mode'] = 'darken';
-        var layer_HDBBranchesgyms5 = new L.geoJson(json_HDBBranchesgyms5, {
-            pane: 'pane_HDBBranchesgyms5',
-            onEachFeature: pop_HDBBranchesgyms5,
+        map.createPane('pane_HDBBranchesgyms2');
+        map.getPane('pane_HDBBranchesgyms2').style.zIndex = 602;
+        map.getPane('pane_HDBBranchesgyms2').style['mix-blend-mode'] = 'darken';
+        var layer_HDBBranchesgyms2 = new L.geoJson(json_HDBBranchesgyms2, {
+            pane: 'pane_HDBBranchesgyms2',
+            onEachFeature: pop_HDBBranchesgyms2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HDBBranchesgyms5(feature))
+                return L.circleMarker(latlng, style_HDBBranchesgyms2(feature))
             }
         });
-        bounds_group.addLayer(layer_HDBBranchesgyms5);
-        feature_group.addLayer(layer_HDBBranchesgyms5);
+        bounds_group.addLayer(layer_HDBBranchesgyms2);
+        function pop_HDBBranches3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">POSTAL_COD</th>\
+                        <td>' + (feature.properties['POSTAL_COD'] !== null ? Autolinker.link(String(feature.properties['POSTAL_COD'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">UNIT_NO</th>\
+                        <td>' + (feature.properties['UNIT_NO'] !== null ? Autolinker.link(String(feature.properties['UNIT_NO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">LEVEL_NO</th>\
+                        <td>' + (feature.properties['LEVEL_NO'] !== null ? Autolinker.link(String(feature.properties['LEVEL_NO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">STREET_NAM</th>\
+                        <td>' + (feature.properties['STREET_NAM'] !== null ? Autolinker.link(String(feature.properties['STREET_NAM'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">BLOCK_NO</th>\
+                        <td>' + (feature.properties['BLOCK_NO'] !== null ? Autolinker.link(String(feature.properties['BLOCK_NO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">BRANCH</th>\
+                        <td>' + (feature.properties['BRANCH'] !== null ? Autolinker.link(String(feature.properties['BRANCH'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DESCRIPTIO</th>\
+                        <td>' + (feature.properties['DESCRIPTIO'] !== null ? Autolinker.link(String(feature.properties['DESCRIPTIO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">X_ADDR</th>\
+                        <td>' + (feature.properties['X_ADDR'] !== null ? Autolinker.link(String(feature.properties['X_ADDR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Y_ADDR</th>\
+                        <td>' + (feature.properties['Y_ADDR'] !== null ? Autolinker.link(String(feature.properties['Y_ADDR'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent);
+        }
+
+        function style_HDBBranches3() {
+            return {
+                pane: 'pane_HDBBranches3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'legend/HDBBranches3.png',
+            iconSize: [20.52, 20.52]
+        }),
+            }
+        }
+        map.createPane('pane_HDBBranches3');
+        map.getPane('pane_HDBBranches3').style.zIndex = 603;
+        map.getPane('pane_HDBBranches3').style['mix-blend-mode'] = 'normal';
+        var layer_HDBBranches3 = new L.geoJson(json_HDBBranches3, {
+            pane: 'pane_HDBBranches3',
+            onEachFeature: pop_HDBBranches3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_HDBBranches3(feature))
+            }
+        });
+        bounds_group.addLayer(layer_HDBBranches3);
+        function pop_gyms4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ADDRESSPOS</th>\
+                        <td>' + (feature.properties['ADDRESSPOS'] !== null ? Autolinker.link(String(feature.properties['ADDRESSPOS'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ADDRESSSTR</th>\
+                        <td>' + (feature.properties['ADDRESSSTR'] !== null ? Autolinker.link(String(feature.properties['ADDRESSSTR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DESCRIPTIO</th>\
+                        <td>' + (feature.properties['DESCRIPTIO'] !== null ? Autolinker.link(String(feature.properties['DESCRIPTIO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NAME</th>\
+                        <td>' + (feature.properties['NAME'] !== null ? Autolinker.link(String(feature.properties['NAME'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">X_ADDR</th>\
+                        <td>' + (feature.properties['X_ADDR'] !== null ? Autolinker.link(String(feature.properties['X_ADDR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Y_ADDR</th>\
+                        <td>' + (feature.properties['Y_ADDR'] !== null ? Autolinker.link(String(feature.properties['Y_ADDR'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent);
+        }
+
+        function style_gyms4() {
+            return {
+                pane: 'pane_gyms4',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/sport_gym.svg',
+            iconSize: [21.28, 21.28]
+        }),
+            }
+        }
+        map.createPane('pane_gyms4');
+        map.getPane('pane_gyms4').style.zIndex = 604;
+        map.getPane('pane_gyms4').style['mix-blend-mode'] = 'normal';
+        var layer_gyms4 = new L.geoJson(json_gyms4, {
+            pane: 'pane_gyms4',
+            onEachFeature: pop_gyms4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_gyms4(feature))
+            }
+        });
+        bounds_group.addLayer(layer_gyms4);
         raster_group.addTo(map);
         feature_group.addTo(map);
-		var titleName = 'Assignment1_Ruijie';
         var baseMaps = {'OSM': basemap0, 'OSM B&W': basemap1};
 		var legend = L.control({position: 'topright'});
 		legend.onAdd = function (map) {
 			var div = L.DomUtil.create('div', 'info legend');
-				div.innerHTML += 'Assignment1_Ruijie';
+				div.innerHTML += 'Assignment1_Zhu_Ruijie';
 			return div;
 		};
 		legend.addTo(map);
-        L.control.layers(baseMaps,{'<img src="legend/gyms1.png" /> gyms': layer_gyms1,'<img src="legend/parksSG2.png" /> parksSG': layer_parksSG2,'<img src="legend/HDBBranches4.png" /> HDB_Branches': layer_HDBBranches4,'<img src="legend/HDBBranchesgyms5.png" /> HDB_Branches_gyms': layer_HDBBranchesgyms5,'subways<br /><table><tr><td style="text-align: center;"><img src="legend/subways3_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/subways3_CircleLineExtension1.png" /></td><td>Circle Line Extension</td></tr><tr><td style="text-align: center;"><img src="legend/subways3_CircleLineMRT2.png" /></td><td>Circle Line MRT</td></tr><tr><td style="text-align: center;"><img src="legend/subways3_DowntownLineMRT3.png" /></td><td>Downtown Line MRT</td></tr><tr><td style="text-align: center;"><img src="legend/subways3_MRTEastWestLineEW4.png" /></td><td>MRT East West Line (EW)</td></tr><tr><td style="text-align: center;"><img src="legend/subways3_MRTEastWestLineEWChangiAirportLine5.png" /></td><td>MRT East West Line (EW) Changi Airport Line</td></tr><tr><td style="text-align: center;"><img src="legend/subways3_NorthEastLineNE6.png" /></td><td>North East Line (NE)</td></tr><tr><td style="text-align: center;"><img src="legend/subways3_NorthSouthLineNS7.png" /></td><td>North South Line (NS)</td></tr></table>': layer_subways3,'AgeGroup 20-60<br /><table><tr><td style="text-align: center;"><img src="legend/AgeGroup20600_9051300.png" /></td><td> 90 - 5130 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup20600_5130137201.png" /></td><td> 5130 - 13720 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup20600_13720274902.png" /></td><td> 13720 - 27490 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup20600_27490504003.png" /></td><td> 27490 - 50400 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup20600_50400858704.png" /></td><td> 50400 - 85870 </td></tr></table>': layer_AgeGroup20600,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/gyms4.png" /> gyms': layer_gyms4,'<img src="legend/HDBBranches3.png" /> HDB_Branches': layer_HDBBranches3,'HDB_Branches_gyms<br />': layer_HDBBranchesgyms2,'subways<br /><table><tr><td style="text-align: center;"><img src="legend/subways1_CircleLineExtension0.png" /></td><td>Circle Line Extension</td></tr><tr><td style="text-align: center;"><img src="legend/subways1_CircleLineMRT1.png" /></td><td>Circle Line MRT</td></tr><tr><td style="text-align: center;"><img src="legend/subways1_DowntownLineMRT2.png" /></td><td>Downtown Line MRT</td></tr><tr><td style="text-align: center;"><img src="legend/subways1_MRTEastWestLineEW3.png" /></td><td>MRT East West Line (EW)</td></tr><tr><td style="text-align: center;"><img src="legend/subways1_MRTEastWestLineEWChangiAirportLine4.png" /></td><td>MRT East West Line (EW) Changi Airport Line</td></tr><tr><td style="text-align: center;"><img src="legend/subways1_NorthEastLineNE5.png" /></td><td>North East Line (NE)</td></tr><tr><td style="text-align: center;"><img src="legend/subways1_NorthSouthLineNS6.png" /></td><td>North South Line (NS)</td></tr></table>': layer_subways1,'AgeGroup 25-54<br /><table><tr><td style="text-align: center;"><img src="legend/AgeGroup25540_00000.png" /></td><td>0.0 - 0.0</td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup25540_035001.png" /></td><td> 0 - 3500 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup25540_3500100802.png" /></td><td> 3500 - 10080 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup25540_10080204503.png" /></td><td> 10080 - 20450 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup25540_20450377804.png" /></td><td> 20450 - 37780 </td></tr><tr><td style="text-align: center;"><img src="legend/AgeGroup25540_37780620605.png" /></td><td> 37780 - 62060 </td></tr></table>': layer_AgeGroup25540,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
